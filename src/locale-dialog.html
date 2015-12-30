@@ -1,0 +1,42 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button ng-click="vm.close()" class="close">
+            <span class="fa fa-times"></span>
+            <span class="sr-only">{{ 'utils.close' | translate }}</span>
+        </button>
+        <h3 class="modal-title">
+            <i class="{{ikon}}"></i>
+            {{ 'language.choose' | translate }}
+        </h3>
+    </div>
+    <div class="modal-body">
+        <div ng-show="vm.locales.length > vm.limitMin" class="form-group">
+            <input type="search" ng-model="vm.search" placeholder="Search languages..." class="form-control">
+            <h4>{{ 'language.avilableDescription' | translate }}</h4>
+        </div>
+        <div class="row" dir="ltr">
+            <div ng-repeat="locale in vm.locales | filter:vm.search | limitTo: vm.limitMax" class="col-xs-6 col-sm-4 col-lg-4">
+                <a ng-click="vm.setLocale(locale)" class="language">
+                    <span ng-if="vm.flags">
+                        <span class="flag-icon flag-icon-{{locale.country}}"></span>
+                    </span>
+                    <span>{{locale.nativeName}}</span>
+                </a>
+            </div>
+            <div ng-if="vm.locales.length - vm.limitMax > 0" class="col-xs-6 col-sm-4 col-lg-4">
+                + {{vm.locales.length - vm.limitMax}} {{ 'utils.more' | translate }}
+            </div>
+        </div>
+        <div ng-if="vm.help">
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="well text-center text-muted">
+                        <span>{{ 'language.notAvilableHelp.description' | translate }}</span>
+                        <a ng-href="{{vm.help}}" target="_blank" >{{ 'language.notAvilableHelp.link' | translate }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
