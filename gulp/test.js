@@ -16,7 +16,5 @@
             singleRun: true,
             reporters: 'dots'
         }, done).start();
-    }).help = {
-        '': 'run karma server and start run unit testing'
-    };
+    });
 })();

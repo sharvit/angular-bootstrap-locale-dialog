@@ -12,7 +12,7 @@
     */
     gulp.task('build', function() {
 
-        var templatesStream = gulp.src('src/*.html')
+        var templatesStream = gulp.src('src/angular-bootstrap-locale-dialog.html')
             .pipe(plugins.angularTemplatecache('templates.js', {
                 root: 'angular-bootstrap-locale-dialog/',
                 module: 'ui.bootstrap.locale-dialog',
@@ -20,7 +20,7 @@
             }))
         ;
 
-        var scriptsStream = gulp.src('src/*.js');
+        var scriptsStream = gulp.src('src/angular-bootstrap-locale-dialog.js');
 
 
         return streamqueue({ objectMode: true }, scriptsStream, templatesStream)
@@ -33,7 +33,5 @@
             .pipe(gulp.dest('./dist'))
         ;
 
-    }).help = {
-        '': 'build the componnent'
-    };
+    });
 })();

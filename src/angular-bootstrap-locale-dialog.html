@@ -1,17 +1,25 @@
 <div class="modal-content" dir="ltr">
+
+    <!-- dialog header -->
     <div class="modal-header">
         <button ng-click="vm.dismiss()" class="close" style="float: right;">
             <i class="fa fa-times"></i>
         </button>
         <h3 class="modal-title">
-            <i class="fa fa-globe"></i>
+            <i class="fa fa-globe"></i> 
             We are available in {{vm.localesCount}} languages
         </h3>
     </div>
+
+    <!-- dialog body -->
     <div class="modal-body">
+
+        <!-- search for locales -->
         <div ng-show="vm.options.showSearch" class="form-group">
             <input type="search" ng-model="vm.search" placeholder="Search languages..." class="form-control">
         </div>
+
+        <!-- locales list -->
         <div class="row">
             <div ng-repeat="localeKey in vm.localesKeys | filter:vm.search" class="col-xs-6 col-sm-4 col-lg-4">
                 <button ng-click="vm.setLocale(localeKey)" class="btn btn-link language">
@@ -22,8 +30,10 @@
                 </button>
             </div>
         </div>
+
+        <!-- contribute area -->
         <div ng-if="vm.options.contributeUrl">
-            <br>
+            <br />
             <div class="row">
                 <div class="col-lg-12">
                     <div class="well text-center text-muted">
@@ -33,5 +43,7 @@
                 </div>
             </div>
         </div>
+
     </div>
+
 </div>
