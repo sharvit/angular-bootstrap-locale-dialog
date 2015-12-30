@@ -7,7 +7,7 @@
         </button>
         <h3 class="modal-title">
             <i class="fa fa-globe"></i> 
-            We are available in {{vm.localesCount}} languages
+            We are available in {{vm.count}} languages
         </h3>
     </div>
 
@@ -21,14 +21,17 @@
 
         <!-- locales list -->
         <div class="row">
-            <div ng-repeat="localeKey in vm.localesKeys | filter:vm.search" class="col-xs-6 col-sm-4 col-lg-4">
-                <button ng-click="vm.setLocale(localeKey)" class="btn btn-link language">
+
+            <div ng-repeat="(localeKey, localeData) in vm.options.locales | filterLocales:vm.search" class="col-xs-6 col-sm-4 col-lg-4">
+                <button ng-click="vm.selectLocale(localeKey)" class="btn btn-link">
                     <span ng-if="vm.options.showFlags">
-                        <span class="flag-icon flag-icon-{{vm.options.locales[localeKey].country}}"></span>
+                        <span class="flag-icon flag-icon-{{localeData.country}}"></span>
                     </span>
-                    <span>{{vm.options.locales[localeKey].name}}</span>
+
+                    <span>{{localeData.name}}</span>
                 </button>
             </div>
+
         </div>
 
         <!-- contribute area -->
