@@ -20,7 +20,11 @@
     "dialog",
     "selector"
   ],
-  "author": "Avi Sharvit <http://sharvit.github.io/about>",
+  "author": {
+    "name": "Avi Sharvit",
+    "email": "sharvita@gmail.com",
+    "url": "https://sharvit.github.io"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sharvit/angular-bootstrap-locale-dialog/issues"
@@ -43,5 +47,6 @@
     "karma-jasmine": "^0.3.6",
     "require-dir": "^0.3.0",
     "streamqueue": "^1.1.1"
-  }
+  },
+  "dependencies": {}
 }
