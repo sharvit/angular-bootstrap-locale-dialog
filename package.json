@@ -20,11 +20,7 @@
     "dialog",
     "selector"
   ],
-  "author": {
-    "name": "Avi Sharvit",
-    "email": "sharvita@gmail.com",
-    "url": "https://sharvit.github.io"
-  },
+  "author": "Avi Sharvit <sharvita@gmail.com> (https://sharvit.github.io)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sharvit/angular-bootstrap-locale-dialog/issues"
