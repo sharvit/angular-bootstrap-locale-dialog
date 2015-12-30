@@ -4,7 +4,8 @@
   "description": "Locale selector dialog for angular-bootstrap",
   "main": "index.js",
   "scripts": {
-    "pretest": "bower install",
+    "postinstall": "bower install",
+    "build": "gulp build",
     "test": "gulp test"
   },
   "repository": {
