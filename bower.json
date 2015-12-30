@@ -1,0 +1,28 @@
+{
+  "name": "angular-bootstrap-locale-dialog",
+  "description": "Locale selector dialog for angular-bootstrap",
+  "main": "index.js",
+  "authors": [
+    "Avi Sharvit <http://sharvit.github.io/about>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "bootstrap",
+    "locale",
+    "language",
+    "dialog",
+    "selector"
+  ],
+  "homepage": "https://github.com/sharvit/angular-bootstrap-locale-dialog",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

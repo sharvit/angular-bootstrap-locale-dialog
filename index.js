@@ -1,0 +1,1 @@
+require('./dist/angular-bootstrap-locale-dialog.min.js');

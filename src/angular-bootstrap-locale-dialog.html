@@ -1,0 +1,37 @@
+<div class="modal-content" dir="ltr">
+    <div class="modal-header">
+        <button ng-click="vm.dismiss()" class="close" style="float: right;">
+            <i class="fa fa-times"></i>
+        </button>
+        <h3 class="modal-title">
+            <i class="fa fa-globe"></i>
+            We are available in {{vm.localesCount}} languages
+        </h3>
+    </div>
+    <div class="modal-body">
+        <div ng-show="vm.options.showSearch" class="form-group">
+            <input type="search" ng-model="vm.search" placeholder="Search languages..." class="form-control">
+        </div>
+        <div class="row">
+            <div ng-repeat="localeKey in vm.localesKeys | filter:vm.search" class="col-xs-6 col-sm-4 col-lg-4">
+                <button ng-click="vm.setLocale(localeKey)" class="btn btn-link language">
+                    <span ng-if="vm.options.showFlags">
+                        <span class="flag-icon flag-icon-{{vm.options.locales[localeKey].country}}"></span>
+                    </span>
+                    <span>{{vm.options.locales[localeKey].name}}</span>
+                </button>
+            </div>
+        </div>
+        <div ng-if="vm.options.contributeUrl">
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="well text-center text-muted">
+                        <span>Don't you see your language?</span>
+                        <a ng-href="{{vm.options.contributeUrl}}" target="_blank" >Help us translate it!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -22,13 +22,10 @@
 
             // default options
             var defaultOptions = {
-                template: '',
-                templateUrl: '',
-                limitMin: 4,
-                limitMax: 24,
-                flags: '',
-                icon: '',
-                help: '',
+                templateUrl: 'angular-bootstrap-locale-dialog/angular-bootstrap-locale-dialog.html',
+                showFlags: true,
+                showSearch: true,
+                contributeUrl: null,
                 locales: []
             };
 
@@ -42,22 +39,12 @@
 
             // open the dialog and return this $uibModal.open promise
             return $uibModal.open({
-                template: options.templateUrl,
                 templateUrl: options.templateUrl,
                 bindToController: true,
                 controllerAs: 'vm',
                 controller: $localeSelectorDialogDialogController,
                 resolve: {
-                    options: function () {
-                        return {
-                            limitMin: limitMin,
-                            limitMax: limitMax,
-                            flags: flags,
-                            icon: icon,
-                            help: help,
-                            locales: locales
-                        };
-                    }
+                    options: options
                 }
             });
         }
@@ -67,7 +54,9 @@
     function $localeSelectorDialogDialogController (options, $uibModalInstance) {
         var vm = this;
 
-        vm.close        =   $uibModalInstance.close;
+        vm.options      =   options;
+
+        vm.dismiss      =   $uibModalInstance.dismiss;
         vm.setLocale    =   setLocale;
 
         activate();
@@ -75,12 +64,8 @@
         //////////////
 
         function activate () {
-            vm.limitMin     =   options.limitMin;
-            vm.limitMax     =   options.limitMax;
-            vm.flags        =   options.flags;
-            vm.icon         =   options.icon;
-            vm.help         =   options.help;
-            vm.locales      =   options.locales;
+            vm.localesKeys  = Object.keys(vm.options.locales);
+            vm.localesCount = Object.keys(vm.options.locales).length;
         }
 
         function setLocale (locale) {
