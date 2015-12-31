@@ -23,8 +23,8 @@ script:
 - npm test
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: ZZu4Tw4QOBZyN3kmK8OxVM+tMg3GbRtqoceuAlj8HmRxRL2LzQR3oQLsPvvwEBcrZH6MG2mQAEzWyjkkZPhwjvCwAhemGrlX1wSzEQQlnjsaxRXEAnsV7bHT2damtmi8JE4z8y6ldTRRsu+UNr5n7Kuo754wJGhzAqnxkL1GXyPCmT2iIHc3Xfz9I9T7HgTYhrEYVGNJO2umd8AXn/B9uSaxia6xpBRTlnueTqQ/BjVLfw9aLbezP0ZoFtecKdsW9tLPGl8wHs7Rb/iYWQu47eqkyPpHNYWjXuw5oNOxEs1QErtRkCXRNOQI9uFDzjFFIdzbPlQgHAP2B/nYAdqS2eIeo0x2MH1K/nv7I9msTf+GrOX0fYftQYf7OM1k2rlvbxYYB5K3x4M7nbbUYMlQXXXlhZ2ydKRXlR4sy0ekbqtOF1ewz5qnK2DiudvRajvqtcySz///lu2EgHW+9JUotKnqsypsl8b1xCNeeQbyLGKCPfqiX14WWISCTlkfzTL6x92NJD6tP9/NWZtQOs+VSU5bPAqY72TGJWbszb9LItfY3JDC0a0iVpugI/TLgsFd9roLVZa167kx5BaTLlZpuOoiFuKQ6eOJioJCgHxSi6EzNKMkAOMlamrIWzEx3DSEMVfu6pVm3ZqnnL+v29D3Az9Y8i5pzIcF9w484SscFYY=
-  file: ''
   on:
-    repo: sharvit/angular-bootstrap-locale-dialog
+    tags: true
