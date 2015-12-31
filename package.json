@@ -1,6 +1,6 @@
 {
   "name": "angular-bootstrap-locale-dialog",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Locale selector dialog for angular-bootstrap",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/sharvit/angular-bootstrap-locale-dialog/issues"
   },
-  "homepage": "https://github.com/sharvit/angular-bootstrap-locale-dialog#readme",
+  "homepage": "https://sharvit.github.io/angular-bootstrap-locale-dialog/",
   "devDependencies": {
     "angular-mocks": "^1.4.0",
     "bower": "^1.7.1",
