@@ -13,7 +13,7 @@
                 
                 'node_modules/angular-mocks/angular-mocks.js',
 
-                'dist/angular-bootstrap-locale-dialog.min.js',
+                'angular-bootstrap-locale-dialog.min.js',
                 'src/angular-bootstrap-locale-dialog.spec.js'
             ],
 

@@ -1,6 +1,14 @@
+/**
+ * angular-bootstrap-locale-dialog - Locale selector dialog for angular-bootstrap
+ * @version v1.0.0
+ * @link https://github.com/sharvit/angular-bootstrap-locale-dialog#readme
+ * @license MIT
+ */
 (function() {
     'use strict';
 
+    $localeSelectorDialogController.$inject = ['options', '$uibModalInstance'];
+    $localeSelectorDialog.$inject = ['$uibModal'];
     angular
         .module('ui.bootstrap.locale-dialog', [
             'ui.bootstrap'
@@ -110,3 +118,10 @@
         }
     }
 })();
+/**
+ * angular-bootstrap-locale-dialog - Locale selector dialog for angular-bootstrap
+ * @version v1.0.0
+ * @link https://github.com/sharvit/angular-bootstrap-locale-dialog#readme
+ * @license MIT
+ */
+angular.module("ui.bootstrap.locale-dialog").run(["$templateCache", function($templateCache) {$templateCache.put("angular-bootstrap-locale-dialog/angular-bootstrap-locale-dialog.html","<div class=\"modal-content\" dir=\"ltr\">\n\n    <!-- dialog header -->\n    <div class=\"modal-header\">\n        <button ng-click=\"vm.dismiss()\" class=\"close\" style=\"float: right;\">\n            <i class=\"fa fa-times\"></i>\n        </button>\n        <h3 class=\"modal-title\">\n            <i class=\"fa fa-globe\"></i> \n            We are available in {{vm.count}} languages\n        </h3>\n    </div>\n\n    <!-- dialog body -->\n    <div class=\"modal-body\">\n\n        <!-- search for locales -->\n        <div ng-show=\"vm.options.showSearch\" class=\"form-group\">\n            <input type=\"search\" ng-model=\"vm.search\" placeholder=\"Search languages...\" class=\"form-control\">\n        </div>\n\n        <!-- locales list -->\n        <div class=\"row\">\n\n            <div ng-repeat=\"(localeKey, localeData) in vm.options.locales | filterLocales:vm.search\" class=\"col-xs-6 col-sm-4 col-lg-4\">\n                <button ng-click=\"vm.selectLocale(localeKey)\" class=\"btn btn-link\">\n                    <span ng-if=\"vm.options.showFlags\">\n                        <span class=\"flag-icon flag-icon-{{localeData.country}}\"></span>\n                    </span>\n\n                    <span>{{localeData.name}}</span>\n                </button>\n            </div>\n\n        </div>\n\n        <!-- contribute area -->\n        <div ng-if=\"vm.options.contributeUrl\">\n            <br />\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    <div class=\"well text-center text-muted\">\n                        <span>Don\'t you see your language?</span>\n                        <a ng-href=\"{{vm.options.contributeUrl}}\" target=\"_blank\" >Help us translate it!</a>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n\n</div>");}]);

@@ -1,0 +1,113 @@
+<!doctype html>
+<html ng-app="demo" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>@@name</title>
+
+    <base href="/">
+
+    <!-- bootstrap css -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/@@bsversion/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- inject:assets-styles:css --><!-- endinject -->
+</head>
+<body>
+
+    <!-- load dependencies -->
+    <script type="application/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/@@ngversion/angular.js"></script>
+    <script type="application/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/@@ngversion/angular-animate.js"></script>
+    <script type="application/javascript" src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-@@uiversion.js"></script>
+
+    <script type="application/javascript" src="angular-bootstrap-locale-dialog-v@@version.min.js"></script>
+
+    <!-- inject:assets-scripts:js --><!-- endinject -->
+
+    <header class="navbar navbar-default navbar-fixed-top app-top-navbar" role="navigation">
+        <div class="container" ng-init="isNavbarCollapsed = true">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <nav class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-click="isNavbarCollapsed = !isNavbarCollapsed">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">@@name</a>
+            </nav>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <nav class="navbar-collapse" uib-collapse="isNavbarCollapsed">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Getting started</a></li>
+                    <li><a href="#">Demo</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <div role="main">
+
+        <div class="bs-docs-masthead">
+            <div class="container">
+
+                <h1>@@name</h1>
+
+                <p class="lead">@@description</p>
+
+                <p class="lead">
+                    <a href="#" class="btn btn-outline-inverse btn-lg">Code on Github</a>
+                </p>
+
+                <p class="version">Currently v@@version</p>
+            </div>
+        </div>
+
+        <div class="container">
+            @@demo-md
+        </div>
+
+        <div class="container">
+            <section id="demo">
+                <div class="page-header">
+                  <h1>$localeSelectorDialog</h1>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 show-grid">
+                        @@doc-html
+                    </div>
+                    <div class="col-md-6">
+                        @@doc-md
+                    </div>
+                </div>
+                <hr>
+                <div class="row code">
+                    <div class="col-md-12" ng-controller="PlunkerCtrl">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-info plunk-btn" ng-click="edit('@@ngversion', '@@bsversion', '@@uiversion', 'demo')">
+                                <i class="glyphicon glyphicon-edit"></i>
+                                Edit in plunker
+                            </button>
+                        </div>
+                        <uib-tabset>
+                            <uib-tab heading="Markup">
+                                <div plunker-content="markup">
+                                    <pre ng-non-bindable><code data-language="html">@@doc-html</code></pre>
+                                </div>
+                            </uib-tab>
+                            <uib-tab heading="JavaScript">
+                                <div plunker-content="javascript">
+                                    <pre ng-non-bindable><code data-language="javascript">@@doc-js</code></pre>
+                                </div>
+                            </uib-tab>
+                        </uib-tabset>
+                    </div>
+                </div>
+            </section>
+            <script>@@doc-js</script>
+        </div>
+    </div>
+</body>
+</html>
