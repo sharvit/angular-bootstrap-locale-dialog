@@ -8,7 +8,9 @@
 
     gulp.task('deploy', ['build'], function() {
         return gulp.src('./dist/**/*')
-            .pipe(plugins.ghPages())
+            .pipe(plugins.ghPages({
+                remove: false
+            }))
         ;
     });
 })();

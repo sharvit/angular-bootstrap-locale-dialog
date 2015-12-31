@@ -1,6 +1,6 @@
 {
   "name": "angular-bootstrap-locale-dialog",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Locale selector dialog for angular-bootstrap",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,12 @@
     "dialog",
     "selector"
   ],
+  "files": [
+    "index.js",
+    "angular-bootstrap-locale-dialog.js",
+    "angular-bootstrap-locale-dialog.min.js",
+    "src"
+  ],
   "author": "Avi Sharvit <sharvita@gmail.com> (https://sharvit.github.io)",
   "license": "MIT",
   "bugs": {
@@ -34,7 +40,7 @@
     "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.8.0",
     "gulp-concat": "^2.6.0",
-    "gulp-gh-pages": "^0.5.4",
+    "gulp-gh-pages": "https://github.com/sharvit/gulp-gh-pages.git",
     "gulp-header": "^1.7.1",
     "gulp-inject": "^3.0.0",
     "gulp-load-plugins": "^1.1.0",

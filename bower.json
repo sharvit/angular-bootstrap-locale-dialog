@@ -18,11 +18,11 @@
   "moduleType": [
     "node"
   ],
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "dist"
+  "files": [
+    "index.js",
+    "angular-bootstrap-locale-dialog.js",
+    "angular-bootstrap-locale-dialog.min.js",
+    "src"
   ],
   "dependencies": {
     "angular": "~1.4.0",
