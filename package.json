@@ -1,6 +1,6 @@
 {
   "name": "angular-bootstrap-locale-dialog",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Locale selector dialog for angular-bootstrap",
   "main": "index.js",
   "scripts": {
