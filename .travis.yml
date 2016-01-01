@@ -16,12 +16,13 @@ before_script:
 - sh -e /etc/init.d/xvfb start
 script:
 - npm test
-after-success:
+after_success:
 - if [ "$TRAVIS_BRANCH" != "$TRAVIS_TAG" ]; then echo "Deployments are only done for the version tags. Current branch is $TRAVIS_BRANCH"; exit 0; fi
 - echo "Deploying build $TRAVIS_BUILD_NUMBER: $TRAVIS_TAG"
 - gulp deploy:gh-pages
 deploy:
   provider: npm
+  skip_cleanup: true
   email: sharvita@gmail.com
   api_key:
     secure: BiQi53anQhsPSZG6WnDaHwc4EmklzxNaVO/tQ8XZR8Pmctmy0JiQpLKU3eDSl0sH5BEdsMLB2lQg5fQPSXmiaE5aoBHh+wJLwEtR+BdScbxxUSrcLN2TVI8otXtGbQbDqdR0zbEy7puHYbpGTfmdaC9YBcHxC7CbhHZh/zcNL9sLMZ41ku+F8w7IcxRRN75yLy1OIdH5Uf7XDQa4LBQ3WotjdIJXZ8JNX6RNvt49+0vYV5AoLHJZLdCnYIyH2x7rACy+6AqeV06aqOKZybnflXkN+oRtXE/dL7lOcK1Y0azJPkE/3hf4MtXwkZJ3/wLp2wQZuvFHua4tRQtjydFKH2k9J4k8ebqYcVVXMBL06gxrUPGfi1UTiadcpkjSNZnYWQZPevo8io4tuN7K0EpsmoIB005WRpcw5z+CO47i/tw5/H1O9U4axXdsZ1T1KTs8jz/Mpl21qRxQkr6ONX/WLy5kYNdbIyFEdvTuQh+P7CvUS89zQLUI47TTnB6bThgawAyfgK2zA8VJH/C8+M6bpLIIyer6h/jaoac06Qjj0gsk2L1raEJ16lEpYTzGKkdqF0xnQjZ+w1N/tPeUlY92hxUVbF+Io3JJmmFW1ToWvP5Y5iKacYmrRTz6P5Y/jhhdGHN/fixRTvmb9kMO3RSpoWtFtHkSpJ81N/ZaUBsbBNE=
