@@ -8,12 +8,12 @@
             basePath : './',
 
             files : [
-                'bower_components/angular/angular.min.js',
-                'bower_components/angular-bootstrap/ui-bootstrap.min.js',
+                'node_modules/angular/angular.js',
+                'node_modules/angular-ui-bootstrap/ui-bootstrap-tpls.js',
                 
                 'node_modules/angular-mocks/angular-mocks.js',
 
-                'angular-bootstrap-locale-dialog.min.js',
+                'src/angular-bootstrap-locale-dialog.js',
                 'src/angular-bootstrap-locale-dialog.spec.js'
             ],
 

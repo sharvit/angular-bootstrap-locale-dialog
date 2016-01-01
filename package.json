@@ -1,17 +1,10 @@
 {
   "name": "angular-bootstrap-locale-dialog",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Locale selector dialog for angular-bootstrap",
-  "main": "index.js",
-  "scripts": {
-    "postinstall": "bower install",
-    "build": "gulp build",
-    "test": "gulp test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sharvit/angular-bootstrap-locale-dialog.git"
-  },
+  "author": "Avi Sharvit <sharvita@gmail.com> (https://sharvit.github.io)",
+  "homepage": "https://sharvit.github.io/angular-bootstrap-locale-dialog/",
+  "license": "MIT",
   "keywords": [
     "angular",
     "bootstrap",
@@ -20,25 +13,23 @@
     "dialog",
     "selector"
   ],
-  "files": [
-    "index.js",
-    "angular-bootstrap-locale-dialog.js",
-    "angular-bootstrap-locale-dialog.min.js",
-    "src"
-  ],
-  "author": "Avi Sharvit <sharvita@gmail.com> (https://sharvit.github.io)",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sharvit/angular-bootstrap-locale-dialog.git"
+  },
   "bugs": {
     "url": "https://github.com/sharvit/angular-bootstrap-locale-dialog/issues"
   },
-  "homepage": "https://sharvit.github.io/angular-bootstrap-locale-dialog/",
-  "dependencies": {
-    "angular": "~1.4.0",
-    "angular-bootstrap": "~0.14.0"
+  "main": "index.js",
+  "directories": [
+    "src"
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "test": "gulp test"
   },
   "devDependencies": {
-    "angular-mocks": "^1.4.0",
-    "bower": "^1.7.1",
+    "angular-mocks": "^1.3.0",
     "capitalize": "^1.0.0",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
@@ -63,5 +54,8 @@
     "require-dir": "^0.3.0",
     "streamqueue": "^1.1.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "angular": "^1.3.0",
+    "angular-ui-bootstrap": "^0.14.0"
+  }
 }

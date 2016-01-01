@@ -1,0 +1,17 @@
+# Logs
+logs
+*.log
+
+node_modules
+npm-debug.log
+bower.json
+
+.git
+.gitignore
+.publish
+.tmp
+.travis.yml
+bower.json
+dist
+node_modules
+unit-tests.karma.conf.js
