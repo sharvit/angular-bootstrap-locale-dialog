@@ -18,7 +18,7 @@ script:
 - npm test
 after_success:
 - if [ "$TRAVIS_BRANCH" != "$TRAVIS_TAG" ]; then echo "Deployments are only done for the version tags. Current branch is $TRAVIS_BRANCH"; exit 0; fi
-- echo "Deploying build $TRAVIS_BUILD_NUMBER: $TRAVIS_TAG"
+- echo "Deploying build $TRAVIS_BUILD_NUMBER - $TRAVIS_TAG"
 - gulp deploy:gh-pages
 deploy:
   provider: npm
