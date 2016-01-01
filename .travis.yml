@@ -3,7 +3,10 @@ git:
 language: node_js
 node_js: stable
 env:
-- CXX=g++-4.8
+  matrix:
+  - CXX=g++-4.8
+  global:
+    secure: gQ8LvILn7eEPCmJYSLNo/XrnwWxIp7t4pOd+XHx7x1gYUb5LpCgr7NuMVCWIhV06QZmAxtlKxRI9uyYFVEv6Qfl6We9SNq2cf3i3l9ttgS/nwTIboi/uzlrVxZglDhEiv26t+uJ3BRC5+y7bLUfgsHGAARBn9ie1GOP87zwsJAQ1V64fVFjwWaPRtzk1UK8Om3Qp7j+f1sARA2ZZ3LTkyuU89ZvSJhxaPuIe5B6eVDRJ9Q7zPUG4lWQyDw5W9h6uIjQ1eBU4Se1XRA+BpE29EWQVVUCiCA1eDidOJPrcNx8VDZIO2jNtcvSeteaXeXSCNe3/CnzQ/hQy+4lbj7BLX7gghtFGMM0HhqXiAjG+zQoShL2Qgw1HoD46cWkqxaEKGjRNMYc5hOAdYda+4o2Lyx3TutisWEABjiBafpPnOD33IbzEZ5fz+Xtzf0IHmnJS1eGZBKATlP7qVZUlgkZjud2xoCl5F9qYih0pOAZoFcFzr5SO3nS3A1TuUgVNGju/Y5UxUbIWS2rWdF3k5eArm5rksXqY9ZF6wPt4Y8/qLl+Dy4E2mafhbfef2ONXMdv+Mv9gtjH0j/EZ/IqKuHuxiX1RCRAnnoZpTVUNJ/dTDkoBg+FRDHdP6IhqV1yWr+jah2y1cyWu3P4k1cJXaUkf5KiUJBnNb7GHtxuXPToRh+U=
 addons:
   apt:
     sources:
@@ -11,13 +14,16 @@ addons:
     packages:
     - g++-4.8
 before_script:
+- git config --global user.name "Avi Sharvit"
+- git config --global user.email sharvita@gmail.com
 - export CHROME_BIN=chromium-browser
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 script:
 - npm test
 after_success:
-- if [ "$TRAVIS_BRANCH" != "$TRAVIS_TAG" ]; then echo "Deployments are only done for the version tags. Current branch is $TRAVIS_BRANCH"; exit 0; fi
+- if [ "$TRAVIS_BRANCH" != "$TRAVIS_TAG" ]; then echo "Deployments are only done for
+  the version tags. Current branch is $TRAVIS_BRANCH"; exit 0; fi
 - echo "Deploying build $TRAVIS_BUILD_NUMBER - $TRAVIS_TAG"
 - gulp deploy:gh-pages
 deploy:
