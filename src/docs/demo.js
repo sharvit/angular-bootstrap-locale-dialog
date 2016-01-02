@@ -61,7 +61,9 @@ angular.module('demo')
 
     vm.changeLocale = function () {
         $localeSelectorDialog.open({
-            locales: avilableLocales
+            locales: avilableLocales,
+            showFlags: true,
+            showSearch: true
         });
     };
 });
