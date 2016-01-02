@@ -1,5 +1,8 @@
 <div ng-controller="DemoController as vm">
-    <button ng-click="vm.changeLocale()" type="button" class="btn btn-default">
-        Click Me
+    <button ng-click="vm.changeLocale()" type="button" class="btn btn-primary">
+        Open a Demo Dialog
     </button>
+    <p ng-show="vm.selectedLocale">
+        You selected: {{vm.selectedLocale}}
+    </p>
 </div>

@@ -1,6 +1,4 @@
-
-
-## Angular Bootstrap Locale Dialog - [AngularJS] service to open locale (language) selector dialog using [AngularUI Bootstrap]
+## Angular Bootstrap Locale Dialog - Locale selector dialog for angular-bootstrap - https://sharvit.github.io/angular-bootstrap-locale-dialog/
 
 [![Build Status](https://travis-ci.org/sharvit/angular-bootstrap-locale-dialog.svg?branch=master)](https://travis-ci.org/sharvit/angular-bootstrap-locale-dialog)
 [![devDependency Status](https://david-dm.org/sharvit/angular-bootstrap-locale-dialog/dev-status.svg?branch=master)](https://david-dm.org/sharvit/angular-bootstrap-locale-dialog#info=devDependencies)
@@ -13,12 +11,13 @@
         - [Bower](#install-with-bower)
         - [Manual](#manual-download)
     - [Adding dependency to your project](#adding-dependency-to-your-project)
+- [Usage](#usage)
 
 
 ## Demo
 
 Do you want to see dialog in action?
-Visit http://sharvit.github.io/angular-bootstrap-locale-dialog/!
+Visit https://sharvit.github.io/angular-bootstrap-locale-dialog/!
 
 
 ## Installation
@@ -49,7 +48,7 @@ This will install [AngularJS] and [AngularUI Bootstrap] bower packages.
 #### Manual download
 
 All the build files for all version can manually downloaded (or better yet, referencing them from the CDN):
-https://github.com/sharvit/angular-bootstrap-locale-dialog/tree/gh-pages
+https://sharvit.github.io/angular-bootstrap-locale-dialog//angular-bootstrap-locale-dialog-v1.0.12.js
 
 ### Adding dependency to your project
 
@@ -58,10 +57,78 @@ When you are done downloading all the dependencies and project files the only re
 ```js
 angular.module('myModule', [
     'ui.bootstrap',
-    'angular-bootstrap-locale-dialog'
+    'ui.bootstrap.locale-dialog'
 ]);
 ```
+[angular-bootstrap-locale-dialog]: http://sharvit.github.io/angular-bootstrap-locale-dialog/
+[AngularJS]: https://angularjs.org/
+[AngularUI Bootstrap]: https://angular-ui.github.io/bootstrap/
+[font-awesome]: https://fortawesome.github.io/Font-Awesome/
+[flag-icon-css]: https://lipis.github.io/flag-icon-css/
 
+### Usage
+
+`$localeSelectorDialog` is a service to open the locale selector dialog.
+It based on [AngularUI Bootstrap] `$uibModal` witch can create modal windows.
+
+The `$localeSelectorDialog` service has only one method: `open(options)`.
+
+### $localeSelectorDialog's open function
+
+#### options parameter
+
+* `locales`
+   _(Type: `object`, Default: `{}`)_ -
+   An `object` with all the supported locales of your app.
+   The `keys` inside the object should be your locale id, for example: `en-US`
+   The `value` for each `key` should fill the following requirements:
+   - `name`
+      _(Type: `string`)_ -
+      The locale readable name, for example `English (US)`
+      
+   - `language`
+      _(Type: `string`)_ -
+      The language key, for example `en`
+      
+   - `country`
+      _(Type: `string`)_ -
+      The country key, for example `us`
+
+    **Their is an example for the `locale` object at the demo.**
+* `templateUrl`
+  _(Type: `string`, Default: `angular-bootstrap-locale-dialog/angular-bootstrap-locale-dialog.html`)_ -
+  A path to a template representing modal's content.
+  Use it if you don't want to use the default template.
+  
+* `showFlags`
+  _(Type: `boolean`, Default: `false`)_ -
+  Set to true to show flags next to the locale name.
+  Need to install [flag-icon-css] so it will match the css to the flag icon.
+  
+* `showSearch`
+  _(Type: `boolean`, Default: `false`)_ -
+  Set to true to show the search field.
+  Useful when you have a big list of locales.
+  
+* `contributeUrl`
+  _(Type: `string`, Default: `null`)_ -
+  Have a contribute url that your users can help localize your app?
+  Set it in order to show contribute box with that url.
+  
+---
+  
+#### return
+
+The `open` method returns the `$uibModal` modal instance and use his `promise` to let you know when the dialog is getting closed and what locale did the user choose.
+You can get the selected locale from the `result` property of the returned `$uibModal` modal instance.
+See the example.
+[read more about the $uibModal]
+
+[angular-bootstrap-locale-dialog]: http://sharvit.github.io/angular-bootstrap-locale-dialog/
+[AngularJS]: https://angularjs.org/
+[AngularUI Bootstrap]: https://angular-ui.github.io/bootstrap/
+[font-awesome]: https://fortawesome.github.io/Font-Awesome/
+[flag-icon-css]: https://lipis.github.io/flag-icon-css/
 
 [angular-bootstrap-locale-dialog]: http://sharvit.github.io/angular-bootstrap-locale-dialog/
 [AngularJS]: https://angularjs.org/

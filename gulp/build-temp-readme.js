@@ -6,8 +6,8 @@
     var gulp          = require('gulp');
     var plugins       = require('gulp-load-plugins')();
 
-    gulp.task('build-dist-readme', function() {
-        return gulp.src(['src/**/readme.md', 'README.md'])
+    gulp.task('build-temp-readme', function() {
+        return gulp.src(['src/**/*.md'])
             .pipe(plugins.markdown())
             .pipe(gulp.dest('.tmp'))
         ;

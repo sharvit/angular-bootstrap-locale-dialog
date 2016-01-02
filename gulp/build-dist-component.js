@@ -18,6 +18,7 @@
                 }
             }))
             .pipe(gulp.dest('./dist'))
+            .pipe(plugins.livereload())
         ;
     });
 })();

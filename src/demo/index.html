@@ -9,9 +9,10 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/@@bsversion/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
     <!-- font awesome -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/@@faversion/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
-    <link href="//lipis.github.io/flag-icon-css/css/flag-icon.css" rel="stylesheet" type="text/css" />
+    <!-- flag-icon -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/flag-icon-css/@@fiversion/css/flag-icon.css" rel="stylesheet" type="text/css" />
 
 
     <!-- inject:assets-styles:css --><!-- endinject -->
@@ -23,6 +24,7 @@
     <script type="application/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/@@ngversion/angular-animate.js"></script>
     <script type="application/javascript" src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-@@uiversion.js"></script>
 
+    <!-- angular-bootstrap-locale-dialog -->
     <script type="application/javascript" src="angular-bootstrap-locale-dialog-v@@version.min.js"></script>
 
     <!-- inject:assets-scripts:js --><!-- endinject -->
@@ -37,7 +39,13 @@
                 <p class="lead">@@description</p>
 
                 <p class="lead">
-                    <a href="#" class="btn btn-outline-inverse btn-lg">Code on Github</a>
+                    @@doc-html
+                </p>
+
+                <p class="lead">
+                    <a href="@@github" class="btn btn-outline-inverse btn-lg">Code on Github</a>
+                    <a href="@@download-zip" class="btn btn-outline-inverse btn-lg">Download ZIP</a>
+                    <a href="@@download-tar" class="btn btn-outline-inverse btn-lg">Download TAR</a>
                 </p>
 
                 <p class="version">Currently v@@version</p>
@@ -45,43 +53,47 @@
         </div>
 
         <div class="container">
-            @@demo-md
+            @@doc-installation-md
         </div>
 
         <div class="container">
             <section id="demo">
                 <div class="page-header">
-                  <h1>$localeSelectorDialog</h1>
+                  <h1>Use the $localeSelectorDialog service</h1>
                   </div>
                   <div class="row">
                     <div class="col-md-6 show-grid">
-                        @@doc-html
+                        <div class="row">
+                            <div class="col-md-12">
+                                @@doc-html
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row code">
+                            <div class="col-md-12" ng-controller="PlunkerCtrl">
+                                <div class="pull-right">
+                                    <button type="button" class="btn btn-info plunk-btn" ng-click="edit('@@ngversion', '@@bsversion', '@@uiversion', '@@faversion', '@@fiversion', '@@version')">
+                                        <i class="glyphicon glyphicon-edit"></i>
+                                        Edit in plunker
+                                    </button>
+                                </div>
+                                <uib-tabset>
+                                    <uib-tab heading="Markup">
+                                        <div plunker-content="markup">
+                                            <pre ng-non-bindable><code data-language="html">@@doc-html</code></pre>
+                                        </div>
+                                    </uib-tab>
+                                    <uib-tab heading="JavaScript">
+                                        <div plunker-content="javascript">
+                                            <pre ng-non-bindable><code data-language="javascript">@@doc-js</code></pre>
+                                        </div>
+                                    </uib-tab>
+                                </uib-tabset>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        @@doc-md
-                    </div>
-                </div>
-                <hr>
-                <div class="row code">
-                    <div class="col-md-12" ng-controller="PlunkerCtrl">
-                        <div class="pull-right">
-                            <button type="button" class="btn btn-info plunk-btn" ng-click="edit('@@ngversion', '@@bsversion', '@@uiversion', 'demo')">
-                                <i class="glyphicon glyphicon-edit"></i>
-                                Edit in plunker
-                            </button>
-                        </div>
-                        <uib-tabset>
-                            <uib-tab heading="Markup">
-                                <div plunker-content="markup">
-                                    <pre ng-non-bindable><code data-language="html">@@doc-html</code></pre>
-                                </div>
-                            </uib-tab>
-                            <uib-tab heading="JavaScript">
-                                <div plunker-content="javascript">
-                                    <pre ng-non-bindable><code data-language="javascript">@@doc-js</code></pre>
-                                </div>
-                            </uib-tab>
-                        </uib-tabset>
+                        @@doc-usage-md
                     </div>
                 </div>
             </section>

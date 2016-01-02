@@ -40,11 +40,6 @@ angular.module('demo')
         "language": "fr",
         "country": "ca"
     },
-    "fr-SW": {
-        "name": "Fran\u00e7ais (SW)",
-        "language": "fr",
-        "country": "sw"
-    },
     "fr-LB": {
         "name": "Fran\u00e7ais (LB)",
         "language": "fr",
@@ -54,6 +49,46 @@ angular.module('demo')
         "name": "\u05e2\u05d1\u05e8\u05d9\u05ea",
         "language": "he",
         "country": "il"
+    },
+    "pt-BR": {
+        "name": "Português (BR)",
+        "language": "pt",
+        "country": "br"
+    },
+    "pt-PT": {
+        "name": "Português (PT)",
+        "language": "pt",
+        "country": "pt"
+    },
+    "ro-RO": {
+        "name": "Română",
+        "language": "ro",
+        "country": "ro"
+    },
+    "ru-RU": {
+        "name": "Русский",
+        "language": "ru",
+        "country": "ru"
+    },
+    "sk-SK": {
+        "name": "Slovenčina (SK)",
+        "language": "sk",
+        "country": "sk"
+    },
+    "tr-TR": {
+        "name": "Türkçe",
+        "language": "tr",
+        "country": "tr"
+    },
+    "de-DE": {
+        "name": "Deutsch (German)",
+        "language": "de",
+        "country": "de"
+    },
+    "th-TH": {
+        "name": "ภาษาไทย",
+        "language": "th",
+        "country": "th"
     }
 })
 .controller('DemoController', function ($localeSelectorDialog, avilableLocales) {
@@ -63,7 +98,10 @@ angular.module('demo')
         $localeSelectorDialog.open({
             locales: avilableLocales,
             showFlags: true,
-            showSearch: true
+            showSearch: true,
+            contributeUrl: 'https://sharvit.github.io/angular-bootstrap-locale-dialog/'
+        }).result.then(function (selectedLocale) {
+            vm.selectedLocale = selectedLocale;
         });
     };
 });
