@@ -11,7 +11,8 @@
     <!-- font awesome -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
-    <link href="//lipis.github.io/flag-icon-css/css/flag-icon.css" rel="stylesheet" type="text/css" />
+    <!-- flag-icon -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/flag-icon-css/1.0.0/css/flag-icon.css" rel="stylesheet" type="text/css" />
 
 
     <!-- inject:assets-styles:css --><link rel="stylesheet" href="assets/app.css"><!-- endinject -->
@@ -23,7 +24,8 @@
     <script type="application/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
     <script type="application/javascript" src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
 
-    <script type="application/javascript" src="angular-bootstrap-locale-dialog-v1.0.12.min.js"></script>
+    <!-- angular-bootstrap-locale-dialog -->
+    <script type="application/javascript" src="angular-bootstrap-locale-dialog-v1.0.13.min.js"></script>
 
     <!-- inject:assets-scripts:js --><script src="assets/app.js"></script><script src="assets/plunker.js"></script><script src="assets/rainbow.js"></script><script src="assets/rainbow/rainbow-generic.js"></script><script src="assets/rainbow/rainbow-html.js"></script><script src="assets/rainbow/rainbow-javascript.js"></script><!-- endinject -->
 
@@ -37,35 +39,28 @@
                 <p class="lead">Locale selector dialog for angular-bootstrap</p>
 
                 <p class="lead">
-                    <a href="#" class="btn btn-outline-inverse btn-lg">Code on Github</a>
+                    <div ng-controller="DemoController as vm">
+    <button ng-click="vm.changeLocale()" type="button" class="btn btn-primary">
+        Open a Demo Dialog
+    </button>
+    <p ng-show="vm.selectedLocale">
+        You selected: {{vm.selectedLocale}}
+    </p>
+</div>
                 </p>
 
-                <p class="version">Currently v1.0.12</p>
+                <p class="lead">
+                    <a href="https://github.com/sharvit/angular-bootstrap-locale-dialog.git" class="btn btn-outline-inverse btn-lg">Code on Github</a>
+                    <a href="https://github.com/sharvit/angular-bootstrap-locale-dialog/archive/v1.0.13.zip" class="btn btn-outline-inverse btn-lg">Download ZIP</a>
+                    <a href="https://github.com/sharvit/angular-bootstrap-locale-dialog/archive/v1.0.13.tar.gz" class="btn btn-outline-inverse btn-lg">Download TAR</a>
+                </p>
+
+                <p class="version">Currently v1.0.13</p>
             </div>
         </div>
 
         <div class="container">
-            <h2 id="angular-bootstrap-locale-dialog-angularjs-service-to-open-locale-language-selector-dialog-using-angularui-bootstrap-">Angular Bootstrap Locale Dialog - <a href="https://angularjs.org/">AngularJS</a> service to open locale (language) selector dialog using <a href="https://angular-ui.github.io/bootstrap/">AngularUI Bootstrap</a></h2>
-<p><a href="https://travis-ci.org/sharvit/angular-bootstrap-locale-dialog"><img src="https://travis-ci.org/sharvit/angular-bootstrap-locale-dialog.svg?branch=master" alt="Build Status"></a>
-<a href="https://david-dm.org/sharvit/angular-bootstrap-locale-dialog#info=devDependencies"><img src="https://david-dm.org/sharvit/angular-bootstrap-locale-dialog/dev-status.svg?branch=master" alt="devDependency Status"></a></p>
-<h3 id="quick-links">Quick links</h3>
-<ul>
-<li><a href="#demo">Demo</a></li>
-<li><a href="#installation">Installation</a><ul>
-<li><a href="#download-the-build">Download the build</a><ul>
-<li><a href="#install-with-npm">NPM</a></li>
-<li><a href="#install-with-bower">Bower</a></li>
-<li><a href="#manual-download">Manual</a></li>
-</ul>
-</li>
-<li><a href="#adding-dependency-to-your-project">Adding dependency to your project</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="demo">Demo</h2>
-<p>Do you want to see dialog in action?
-Visit <a href="http://sharvit.github.io/angular-bootstrap-locale-dialog/!">http://sharvit.github.io/angular-bootstrap-locale-dialog/!</a></p>
-<h2 id="installation">Installation</h2>
+            <h2 id="installation">Installation</h2>
 <p>Installation is easy as <a href="http://sharvit.github.io/angular-bootstrap-locale-dialog/">angular-bootstrap-locale-dialog</a> has minimal dependencies - only the <a href="https://angularjs.org/">AngularJS</a> and <a href="https://angular-ui.github.io/bootstrap/">AngularUI Bootstrap</a> are required.</p>
 <p>Additionally, it is recommended to use some other dependencies:</p>
 <ul>
@@ -83,12 +78,12 @@ Visit <a href="http://sharvit.github.io/angular-bootstrap-locale-dialog/!">http:
 <p>This will install <a href="https://angularjs.org/">AngularJS</a> and <a href="https://angular-ui.github.io/bootstrap/">AngularUI Bootstrap</a> bower packages.</p>
 <h4 id="manual-download">Manual download</h4>
 <p>All the build files for all version can manually downloaded (or better yet, referencing them from the CDN):
-<a href="https://github.com/sharvit/angular-bootstrap-locale-dialog/tree/gh-pages">https://github.com/sharvit/angular-bootstrap-locale-dialog/tree/gh-pages</a></p>
+https://sharvit.github.io/angular-bootstrap-locale-dialog//angular-bootstrap-locale-dialog-v1.0.13.js</p>
 <h3 id="adding-dependency-to-your-project">Adding dependency to your project</h3>
 <p>When you are done downloading all the dependencies and project files the only remaining part is to add dependencies on the <code>angular-bootstrap-locale-dialog</code> <a href="https://angularjs.org/">AngularJS</a> module:</p>
 <pre><code class="lang-js">angular.module(&#39;myModule&#39;, [
     &#39;ui.bootstrap&#39;,
-    &#39;angular-bootstrap-locale-dialog&#39;
+    &#39;ui.bootstrap.locale-dialog&#39;
 ]);
 </code></pre>
 
@@ -97,96 +92,47 @@ Visit <a href="http://sharvit.github.io/angular-bootstrap-locale-dialog/!">http:
         <div class="container">
             <section id="demo">
                 <div class="page-header">
-                  <h1>$localeSelectorDialog</h1>
+                  <h1>Use the $localeSelectorDialog service</h1>
                   </div>
                   <div class="row">
                     <div class="col-md-6 show-grid">
-                        <div ng-controller="DemoController as vm">
-    <button ng-click="vm.changeLocale()" type="button" class="btn btn-default">
-        Click Me
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div ng-controller="DemoController as vm">
+    <button ng-click="vm.changeLocale()" type="button" class="btn btn-primary">
+        Open a Demo Dialog
     </button>
+    <p ng-show="vm.selectedLocale">
+        You selected: {{vm.selectedLocale}}
+    </p>
 </div>
-                    </div>
-                    <div class="col-md-6">
-                        <p><code>$localeSelectorDialog</code> is a service to open the locale selector dialog.
-It based on [AngularBS] <code>$uibModal</code> witch can create modal windows.</p>
-<p>The <code>$localeSelectorDialog</code> service has only one method: <code>open(options)</code>.</p>
-<h3 id="-localeselectordialog-s-open-function">$localeSelectorDialog&#39;s open function</h3>
-<h4 id="options-parameter">options parameter</h4>
-<ul>
-<li><p><code>locales</code>
- <em>(Type: <code>object</code>, Default: <code>{}</code>)</em> -
- An <code>object</code> with all the supported locales of your app.
- The <code>keys</code> inside the object should be your locale id, for example: <code>en-US</code>
- The <code>value</code> for each <code>key</code> should fill the following requirements:</p>
-<ul>
-<li><p><code>name</code>
- <em>(Type: <code>string</code>)</em> -
- The locale readable name, for example <code>English (US)</code></p>
-</li>
-<li><p><code>language</code>
- <em>(Type: <code>string</code>)</em> -
- The language key, for example <code>en</code></p>
-</li>
-<li><p><code>country</code>
- <em>(Type: <code>string</code>)</em> -
- The country key, for example <code>us</code></p>
-<p><strong>Their is an example for the <code>locale</code> object at the demo.</strong></p>
-</li>
-</ul>
-</li>
-<li><p><code>templateUrl</code>
-<em>(Type: <code>string</code>, Default: <code>angular-bootstrap-locale-dialog/angular-bootstrap-locale-dialog.html</code>)</em> -
-A path to a template representing modal&#39;s content.
-Use it if you don&#39;t want to use the default template.</p>
-</li>
-<li><p><code>showFlags</code>
-<em>(Type: <code>boolean</code>, Default: <code>false</code>)</em> -
-Set to true to show flags next to the locale name.
-Need to install [flag-icon-css] so it will match the css to the flag icon.</p>
-</li>
-<li><p><code>showSearch</code>
-<em>(Type: <code>boolean</code>, Default: <code>false</code>)</em> -
-Set to true to show the search field.
-Useful when you have a big list of locales.</p>
-</li>
-<li><p><code>contributeUrl</code>
-<em>(Type: <code>string</code>, Default: <code>null</code>)</em> -
-Have a contribute url that your users can help localize your app?
-Set it in order to show contribute box with that url.</p>
-</li>
-</ul>
-<hr>
-<h4 id="return">return</h4>
-<p>The <code>open</code> method returns the <code>$uibModal</code> modal instance and use his <code>promise</code> to let you know when the dialog is getting closed and what locale did the user choose.
-You can get the selected locale from the <code>result</code> property of the returned <code>$uibModal</code> modal instance.
-See the example.
-[read more about the $uibModal]</p>
-
-                    </div>
-                </div>
-                <hr>
-                <div class="row code">
-                    <div class="col-md-12" ng-controller="PlunkerCtrl">
-                        <div class="pull-right">
-                            <button type="button" class="btn btn-info plunk-btn" ng-click="edit('1.4.7', '3.3.5', '0.14.3', 'demo')">
-                                <i class="glyphicon glyphicon-edit"></i>
-                                Edit in plunker
-                            </button>
+                            </div>
                         </div>
-                        <uib-tabset>
-                            <uib-tab heading="Markup">
-                                <div plunker-content="markup">
-                                    <pre ng-non-bindable><code data-language="html"><div ng-controller="DemoController as vm">
-    <button ng-click="vm.changeLocale()" type="button" class="btn btn-default">
-        Click Me
-    </button>
-</div></code></pre>
+                        <hr />
+                        <div class="row code">
+                            <div class="col-md-12" ng-controller="PlunkerCtrl">
+                                <div class="pull-right">
+                                    <button type="button" class="btn btn-info plunk-btn" ng-click="edit('1.4.7', '3.3.5', '0.14.3', '4.5.0', '1.0.0', '1.0.13')">
+                                        <i class="glyphicon glyphicon-edit"></i>
+                                        Edit in plunker
+                                    </button>
                                 </div>
-                            </uib-tab>
-                            <uib-tab heading="JavaScript">
-                                <div plunker-content="javascript">
-                                    <pre ng-non-bindable><code data-language="javascript">angular.module('demo')
+                                <uib-tabset>
+                                    <uib-tab heading="Markup">
+                                        <div plunker-content="markup">
+                                            <pre ng-non-bindable><code data-language="html"><div ng-controller="DemoController as vm">
+    <button ng-click="vm.changeLocale()" type="button" class="btn btn-primary">
+        Open a Demo Dialog
+    </button>
+    <p ng-show="vm.selectedLocale">
+        You selected: {{vm.selectedLocale}}
+    </p>
+</div></code></pre>
+                                        </div>
+                                    </uib-tab>
+                                    <uib-tab heading="JavaScript">
+                                        <div plunker-content="javascript">
+                                            <pre ng-non-bindable><code data-language="javascript">angular.module('demo')
 .constant("avilableLocales", {
     "en-US": {
         "name": "English (US)",
@@ -228,11 +174,6 @@ See the example.
         "language": "fr",
         "country": "ca"
     },
-    "fr-SW": {
-        "name": "Fran\u00e7ais (SW)",
-        "language": "fr",
-        "country": "sw"
-    },
     "fr-LB": {
         "name": "Fran\u00e7ais (LB)",
         "language": "fr",
@@ -242,6 +183,46 @@ See the example.
         "name": "\u05e2\u05d1\u05e8\u05d9\u05ea",
         "language": "he",
         "country": "il"
+    },
+    "pt-BR": {
+        "name": "Português (BR)",
+        "language": "pt",
+        "country": "br"
+    },
+    "pt-PT": {
+        "name": "Português (PT)",
+        "language": "pt",
+        "country": "pt"
+    },
+    "ro-RO": {
+        "name": "Română",
+        "language": "ro",
+        "country": "ro"
+    },
+    "ru-RU": {
+        "name": "Русский",
+        "language": "ru",
+        "country": "ru"
+    },
+    "sk-SK": {
+        "name": "Slovenčina (SK)",
+        "language": "sk",
+        "country": "sk"
+    },
+    "tr-TR": {
+        "name": "Türkçe",
+        "language": "tr",
+        "country": "tr"
+    },
+    "de-DE": {
+        "name": "Deutsch (German)",
+        "language": "de",
+        "country": "de"
+    },
+    "th-TH": {
+        "name": "ภาษาไทย",
+        "language": "th",
+        "country": "th"
     }
 })
 .controller('DemoController', function ($localeSelectorDialog, avilableLocales) {
@@ -251,13 +232,75 @@ See the example.
         $localeSelectorDialog.open({
             locales: avilableLocales,
             showFlags: true,
-            showSearch: true
+            showSearch: true,
+            contributeUrl: 'https://sharvit.github.io/angular-bootstrap-locale-dialog/'
+        }).result.then(function (selectedLocale) {
+            vm.selectedLocale = selectedLocale;
         });
     };
 });</code></pre>
-                                </div>
-                            </uib-tab>
-                        </uib-tabset>
+                                        </div>
+                                    </uib-tab>
+                                </uib-tabset>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <p><code>$localeSelectorDialog</code> is a service to open the locale selector dialog.
+It based on <a href="https://angular-ui.github.io/bootstrap/">AngularUI Bootstrap</a> <code>$uibModal</code> witch can create modal windows.</p>
+<p>The <code>$localeSelectorDialog</code> service has only one method: <code>open(options)</code>.</p>
+<h3 id="-localeselectordialog-s-open-function">$localeSelectorDialog&#39;s open function</h3>
+<h4 id="options-parameter">options parameter</h4>
+<ul>
+<li><p><code>locales</code>
+ <em>(Type: <code>object</code>, Default: <code>{}</code>)</em> -
+ An <code>object</code> with all the supported locales of your app.
+ The <code>keys</code> inside the object should be your locale id, for example: <code>en-US</code>
+ The <code>value</code> for each <code>key</code> should fill the following requirements:</p>
+<ul>
+<li><p><code>name</code>
+ <em>(Type: <code>string</code>)</em> -
+ The locale readable name, for example <code>English (US)</code></p>
+</li>
+<li><p><code>language</code>
+ <em>(Type: <code>string</code>)</em> -
+ The language key, for example <code>en</code></p>
+</li>
+<li><p><code>country</code>
+ <em>(Type: <code>string</code>)</em> -
+ The country key, for example <code>us</code></p>
+<p><strong>Their is an example for the <code>locale</code> object at the demo.</strong></p>
+</li>
+</ul>
+</li>
+<li><p><code>templateUrl</code>
+<em>(Type: <code>string</code>, Default: <code>angular-bootstrap-locale-dialog/angular-bootstrap-locale-dialog.html</code>)</em> -
+A path to a template representing modal&#39;s content.
+Use it if you don&#39;t want to use the default template.</p>
+</li>
+<li><p><code>showFlags</code>
+<em>(Type: <code>boolean</code>, Default: <code>false</code>)</em> -
+Set to true to show flags next to the locale name.
+Need to install <a href="https://lipis.github.io/flag-icon-css/">flag-icon-css</a> so it will match the css to the flag icon.</p>
+</li>
+<li><p><code>showSearch</code>
+<em>(Type: <code>boolean</code>, Default: <code>false</code>)</em> -
+Set to true to show the search field.
+Useful when you have a big list of locales.</p>
+</li>
+<li><p><code>contributeUrl</code>
+<em>(Type: <code>string</code>, Default: <code>null</code>)</em> -
+Have a contribute url that your users can help localize your app?
+Set it in order to show contribute box with that url.</p>
+</li>
+</ul>
+<hr>
+<h4 id="return">return</h4>
+<p>The <code>open</code> method returns the <code>$uibModal</code> modal instance and use his <code>promise</code> to let you know when the dialog is getting closed and what locale did the user choose.
+You can get the selected locale from the <code>result</code> property of the returned <code>$uibModal</code> modal instance.
+See the example.
+[read more about the $uibModal]</p>
+
                     </div>
                 </div>
             </section>
@@ -303,11 +346,6 @@ See the example.
         "language": "fr",
         "country": "ca"
     },
-    "fr-SW": {
-        "name": "Fran\u00e7ais (SW)",
-        "language": "fr",
-        "country": "sw"
-    },
     "fr-LB": {
         "name": "Fran\u00e7ais (LB)",
         "language": "fr",
@@ -317,6 +355,46 @@ See the example.
         "name": "\u05e2\u05d1\u05e8\u05d9\u05ea",
         "language": "he",
         "country": "il"
+    },
+    "pt-BR": {
+        "name": "Português (BR)",
+        "language": "pt",
+        "country": "br"
+    },
+    "pt-PT": {
+        "name": "Português (PT)",
+        "language": "pt",
+        "country": "pt"
+    },
+    "ro-RO": {
+        "name": "Română",
+        "language": "ro",
+        "country": "ro"
+    },
+    "ru-RU": {
+        "name": "Русский",
+        "language": "ru",
+        "country": "ru"
+    },
+    "sk-SK": {
+        "name": "Slovenčina (SK)",
+        "language": "sk",
+        "country": "sk"
+    },
+    "tr-TR": {
+        "name": "Türkçe",
+        "language": "tr",
+        "country": "tr"
+    },
+    "de-DE": {
+        "name": "Deutsch (German)",
+        "language": "de",
+        "country": "de"
+    },
+    "th-TH": {
+        "name": "ภาษาไทย",
+        "language": "th",
+        "country": "th"
     }
 })
 .controller('DemoController', function ($localeSelectorDialog, avilableLocales) {
@@ -326,7 +404,10 @@ See the example.
         $localeSelectorDialog.open({
             locales: avilableLocales,
             showFlags: true,
-            showSearch: true
+            showSearch: true,
+            contributeUrl: 'https://sharvit.github.io/angular-bootstrap-locale-dialog/'
+        }).result.then(function (selectedLocale) {
+            vm.selectedLocale = selectedLocale;
         });
     };
 });</script>
