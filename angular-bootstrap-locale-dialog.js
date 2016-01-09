@@ -1,6 +1,6 @@
 /**
  * angular-bootstrap-locale-dialog - Locale selector dialog for angular-bootstrap
- * @version v1.0.14
+ * @version v1.1.0
  * @link https://sharvit.github.io/angular-bootstrap-locale-dialog/
  * @license MIT
  */
@@ -120,7 +120,7 @@
 })();
 /**
  * angular-bootstrap-locale-dialog - Locale selector dialog for angular-bootstrap
- * @version v1.0.14
+ * @version v1.1.0
  * @link https://sharvit.github.io/angular-bootstrap-locale-dialog/
  * @license MIT
  */
