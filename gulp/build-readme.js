@@ -18,7 +18,7 @@
     */
     gulp.task('build-readme', function() {
 
-        return gulp.src('src/docs/README.md')
+        return gulp.src('src/docs/layout.md')
             .pipe(plugins.replaceTask({
                 patterns: [{
                     match: 'version',
@@ -42,10 +42,23 @@
                     match: 'doc-installation-md',
                     replacement: fs.readFileSync('./src/docs/installation.md', 'utf8')
                 }, {
+                    match: 'doc-html',
+                    replacement: fs.readFileSync('./src/docs/demo.html', 'utf8')
+                }, {
+                    match: 'doc-js',
+                    replacement: fs.readFileSync('./src/docs/demo.js', 'utf8')
+                }, {
                     match: 'doc-usage-md',
                     replacement: fs.readFileSync('./src/docs/usage.md', 'utf8')
+                }, {
+                    match: 'doc-contributing-md',
+                    replacement: fs.readFileSync('./src/docs/contributing.md', 'utf8')
+                }, {
+                    match: 'doc-license-md',
+                    replacement: fs.readFileSync('./src/docs/license.md', 'utf8')
                 }]
             }))
+            .pipe(plugins.rename('README.md'))
             .pipe(gulp.dest('./'))
         ;
     });

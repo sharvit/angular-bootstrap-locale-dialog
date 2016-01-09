@@ -33,14 +33,14 @@ Additionally, it is recommended to use some other dependencies:
 #### Install with NPM
 
 ```sh
-$ npm install angular-bootstrap-locale-dialog
+$ npm install angular-bootstrap-locale-dialog --save
 ```
 
 This will install [AngularJS] and [AngularUI Bootstrap] NPM packages.
 
 #### Install with Bower
 ```sh
-$ bower install angular-bootstrap-locale-dialog
+$ bower install angular-bootstrap-locale-dialog --save
 ```
 
 This will install [AngularJS] and [AngularUI Bootstrap] bower packages.
@@ -48,7 +48,7 @@ This will install [AngularJS] and [AngularUI Bootstrap] bower packages.
 #### Manual download
 
 All the build files for all version can manually downloaded (or better yet, referencing them from the CDN):
-https://sharvit.github.io/angular-bootstrap-locale-dialog//angular-bootstrap-locale-dialog-v1.0.13.js
+https://sharvit.github.io/angular-bootstrap-locale-dialog//angular-bootstrap-locale-dialog-v1.0.14.js
 
 ### Adding dependency to your project
 
@@ -67,6 +67,127 @@ angular.module('myModule', [
 [flag-icon-css]: https://lipis.github.io/flag-icon-css/
 
 ### Usage
+
+```html
+<div ng-controller="DemoController as vm">
+    <button ng-click="vm.changeLocale()" type="button" class="btn btn-primary">
+        Open a Demo Dialog
+    </button>
+    <p ng-show="vm.selectedLocale">
+        You selected: {{vm.selectedLocale}}
+    </p>
+</div>
+```
+
+```js
+angular.module('demo')
+.constant("avilableLocales", {
+    "en-US": {
+        "name": "English (US)",
+        "language": "en",
+        "country": "us"
+    },
+    "en-CA": {
+        "name": "English (CA)",
+        "language": "en",
+        "country": "ca"
+    },
+    "en-GB": {
+        "name": "English (GB)",
+        "language": "en",
+        "country": "gb"
+    },
+    "en-IN": {
+        "name": "English (IN)",
+        "language": "en",
+        "country": "in"
+    },
+    "en-IE": {
+        "name": "English (IE)",
+        "language": "en",
+        "country": "ie"
+    },
+    "fr-FR": {
+        "name": "Fran\u00e7ais (FR)",
+        "language": "fr",
+        "country": "fr"
+    },
+    "fr-BE": {
+        "name": "Fran\u00e7ais (BE)",
+        "language": "fr",
+        "country": "be"
+    },
+    "fr-CA": {
+        "name": "Fran\u00e7ais (CA)",
+        "language": "fr",
+        "country": "ca"
+    },
+    "fr-LB": {
+        "name": "Fran\u00e7ais (LB)",
+        "language": "fr",
+        "country": "lb"
+    },
+    "he-IL": {
+        "name": "\u05e2\u05d1\u05e8\u05d9\u05ea",
+        "language": "he",
+        "country": "il"
+    },
+    "pt-BR": {
+        "name": "Português (BR)",
+        "language": "pt",
+        "country": "br"
+    },
+    "pt-PT": {
+        "name": "Português (PT)",
+        "language": "pt",
+        "country": "pt"
+    },
+    "ro-RO": {
+        "name": "Română",
+        "language": "ro",
+        "country": "ro"
+    },
+    "ru-RU": {
+        "name": "Русский",
+        "language": "ru",
+        "country": "ru"
+    },
+    "sk-SK": {
+        "name": "Slovenčina (SK)",
+        "language": "sk",
+        "country": "sk"
+    },
+    "tr-TR": {
+        "name": "Türkçe",
+        "language": "tr",
+        "country": "tr"
+    },
+    "de-DE": {
+        "name": "Deutsch (German)",
+        "language": "de",
+        "country": "de"
+    },
+    "th-TH": {
+        "name": "ภาษาไทย",
+        "language": "th",
+        "country": "th"
+    }
+})
+.controller('DemoController', function ($localeSelectorDialog, avilableLocales) {
+    var vm = this;
+
+    vm.changeLocale = function () {
+        $localeSelectorDialog.open({
+            locales: avilableLocales,
+            showFlags: true,
+            showSearch: true,
+            contributeUrl: 'https://sharvit.github.io/angular-bootstrap-locale-dialog/'
+        }).result.then(function (selectedLocale) {
+            vm.selectedLocale = selectedLocale;
+        });
+    };
+});
+```
 
 `$localeSelectorDialog` is a service to open the locale selector dialog.
 It based on [AngularUI Bootstrap] `$uibModal` witch can create modal windows.
@@ -130,8 +251,17 @@ See the example.
 [font-awesome]: https://fortawesome.github.io/Font-Awesome/
 [flag-icon-css]: https://lipis.github.io/flag-icon-css/
 
-[angular-bootstrap-locale-dialog]: http://sharvit.github.io/angular-bootstrap-locale-dialog/
-[AngularJS]: https://angularjs.org/
-[AngularUI Bootstrap]: https://angular-ui.github.io/bootstrap/
-[font-awesome]: https://fortawesome.github.io/Font-Awesome/
-[flag-icon-css]: https://lipis.github.io/flag-icon-css/
+
+## Contributing
+
+* ```npm install && npm install -g  gulp``` to install the environment
+* ```gulp build``` build the component, the docs and the demo
+* ```gulp serve``` serve the demo
+* ```gulp test``` test the component with karama
+
+
+## License
+
+MIT License (MIT)
+
+Copyright (c) 2015 Avi Sharvit

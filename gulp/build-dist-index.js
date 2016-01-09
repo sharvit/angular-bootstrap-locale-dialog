@@ -92,6 +92,12 @@
                 }, {
                     match: 'doc-js',
                     replacement: fs.readFileSync('./src/docs/demo.js', 'utf8')
+                }, {
+                    match: 'doc-contributing-md',
+                    replacement: fs.readFileSync('./.tmp/docs/contributing.html', 'utf8')
+                }, {
+                    match: 'doc-license-md',
+                    replacement: fs.readFileSync('./.tmp/docs/license.html', 'utf8')
                 }]
             }))
             .pipe(gulp.dest('./dist'))

@@ -11,14 +11,14 @@ Additionally, it is recommended to use some other dependencies:
 #### Install with NPM
 
 ```sh
-$ npm install angular-bootstrap-locale-dialog
+$ npm install angular-bootstrap-locale-dialog --save
 ```
 
 This will install [AngularJS] and [AngularUI Bootstrap] NPM packages.
 
 #### Install with Bower
 ```sh
-$ bower install angular-bootstrap-locale-dialog
+$ bower install angular-bootstrap-locale-dialog --save
 ```
 
 This will install [AngularJS] and [AngularUI Bootstrap] bower packages.
