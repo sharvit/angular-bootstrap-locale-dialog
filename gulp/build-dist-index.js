@@ -13,9 +13,9 @@
 
     var pkg = require('../package.json');
 
-    var ngversion = '1.4.7';
-    var bsversion = '3.3.5';
-    var uiversion = '0.14.3';
+    var ngversion = '1.4.9';
+    var bsversion = '3.3.6';
+    var uiversion = '1.1.0';
     var faversion = '4.5.0';
     var fiversion = '1.0.0';
 

@@ -1,6 +1,7 @@
 ## Angular Bootstrap Locale Dialog - Locale selector dialog for angular-bootstrap - https://sharvit.github.io/angular-bootstrap-locale-dialog/
 
 [![Build Status](https://travis-ci.org/sharvit/angular-bootstrap-locale-dialog.svg?branch=master)](https://travis-ci.org/sharvit/angular-bootstrap-locale-dialog)
+[![Dependency Status](https://david-dm.org/sharvit/angular-bootstrap-locale-dialog.svg)](https://david-dm.org/sharvit/angular-bootstrap-locale-dialog)
 [![devDependency Status](https://david-dm.org/sharvit/angular-bootstrap-locale-dialog/dev-status.svg?branch=master)](https://david-dm.org/sharvit/angular-bootstrap-locale-dialog#info=devDependencies)
 
 ### Quick links
@@ -48,7 +49,7 @@ This will install [AngularJS] and [AngularUI Bootstrap] bower packages.
 #### Manual download
 
 All the build files for all version can manually downloaded (or better yet, referencing them from the CDN):
-https://sharvit.github.io/angular-bootstrap-locale-dialog//angular-bootstrap-locale-dialog-v1.1.1.js
+https://sharvit.github.io/angular-bootstrap-locale-dialog//angular-bootstrap-locale-dialog-v1.2.0.js
 
 ### Adding dependency to your project
 
