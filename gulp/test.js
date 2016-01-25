@@ -13,8 +13,7 @@
     gulp.task('test', ['build'], function (done) {
         new KarmaServer({
             configFile: path.resolve(__dirname, '../unit-tests.karma.conf.js'),
-            singleRun: true,
-            reporters: 'dots'
+            singleRun: true
         }, done).start();
     });
 })();

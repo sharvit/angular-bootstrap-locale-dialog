@@ -23,10 +23,27 @@
 
             browsers : ['Chrome'],
 
+            // coverage reporter generates the coverage
+            reporters: ['dots', 'coverage'],
+
+            preprocessors: {
+                // source files, that you wanna generate coverage for
+                // do not include tests or libraries
+                // (these files will be instrumented by Istanbul)
+                'src/angular-bootstrap-locale-dialog.js': ['coverage']
+            },
+
+            // optionally, configure the reporter
+            coverageReporter: {
+                type : 'lcov',
+                dir : '.coverage/'
+            },
+
             plugins : [
                 'karma-chrome-launcher',
                 'karma-firefox-launcher',
-                'karma-jasmine'
+                'karma-jasmine',
+                'karma-coverage'
             ],
 
             customLaunchers: {

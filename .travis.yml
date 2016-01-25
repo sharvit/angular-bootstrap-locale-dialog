@@ -22,6 +22,7 @@ before_script:
 script:
 - npm test
 after_success:
+- npm run codecov
 - if [ "$TRAVIS_BRANCH" != "$TRAVIS_TAG" ]; then echo "Deployments are only done for
   the version tags. Current branch is $TRAVIS_BRANCH"; exit 0; fi
 - echo "Deploying build $TRAVIS_BUILD_NUMBER - $TRAVIS_TAG"

@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/sharvit/angular-bootstrap-locale-dialog.svg?branch=master)](https://travis-ci.org/sharvit/angular-bootstrap-locale-dialog)
 [![Dependency Status](https://david-dm.org/sharvit/angular-bootstrap-locale-dialog.svg)](https://david-dm.org/sharvit/angular-bootstrap-locale-dialog)
 [![devDependency Status](https://david-dm.org/sharvit/angular-bootstrap-locale-dialog/dev-status.svg?branch=master)](https://david-dm.org/sharvit/angular-bootstrap-locale-dialog#info=devDependencies)
+[![codecov.io](https://codecov.io/github/sharvit/angular-bootstrap-locale-dialog/coverage.svg?branch=master)](https://codecov.io/github/sharvit/angular-bootstrap-locale-dialog?branch=master)
 
 ### Quick links
 - [Demo](#demo)
@@ -49,7 +50,7 @@ This will install [AngularJS] and [AngularUI Bootstrap] bower packages.
 #### Manual download
 
 All the build files for all version can manually downloaded (or better yet, referencing them from the CDN):
-https://sharvit.github.io/angular-bootstrap-locale-dialog//angular-bootstrap-locale-dialog-v1.2.0.js
+https://sharvit.github.io/angular-bootstrap-locale-dialog//angular-bootstrap-locale-dialog-v1.2.1.js
 
 ### Adding dependency to your project
 

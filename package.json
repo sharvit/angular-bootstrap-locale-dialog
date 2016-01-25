@@ -1,6 +1,6 @@
 {
   "name": "angular-bootstrap-locale-dialog",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Locale selector dialog for angular-bootstrap",
   "author": "Avi Sharvit <sharvita@gmail.com> (https://sharvit.github.io)",
   "homepage": "https://sharvit.github.io/angular-bootstrap-locale-dialog/",
@@ -26,11 +26,13 @@
   ],
   "scripts": {
     "build": "gulp build",
-    "test": "gulp test"
+    "test": "gulp test",
+    "codecov": "cat .coverage/*/lcov.info | ./node_modules/.bin/codecov"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0",
     "capitalize": "^1.0.0",
+    "codecov.io": "^0.1.6",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.8.0",
@@ -48,8 +50,9 @@
     "gulp-uglify": "^1.5.1",
     "gulp-webserver": "^0.9.1",
     "jasmine": "^2.4.1",
-    "karma": "^0.13.16",
+    "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "^0.5.3",
     "karma-firefox-launcher": "^0.1.7",
     "karma-jasmine": "^0.3.6",
     "require-dir": "^0.3.0",

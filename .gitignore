@@ -10,3 +10,6 @@ bower_components
 # builds
 .publish
 dist
+
+# code coverage
+.coverage

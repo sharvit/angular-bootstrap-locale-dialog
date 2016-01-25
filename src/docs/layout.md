@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/sharvit/angular-bootstrap-locale-dialog.svg?branch=master)](https://travis-ci.org/sharvit/angular-bootstrap-locale-dialog)
 [![Dependency Status](https://david-dm.org/sharvit/angular-bootstrap-locale-dialog.svg)](https://david-dm.org/sharvit/angular-bootstrap-locale-dialog)
 [![devDependency Status](https://david-dm.org/sharvit/angular-bootstrap-locale-dialog/dev-status.svg?branch=master)](https://david-dm.org/sharvit/angular-bootstrap-locale-dialog#info=devDependencies)
+[![codecov.io](https://codecov.io/github/sharvit/angular-bootstrap-locale-dialog/coverage.svg?branch=master)](https://codecov.io/github/sharvit/angular-bootstrap-locale-dialog?branch=master)
 
 ### Quick links
 - [Demo](#demo)

@@ -16,7 +16,18 @@
 
             describe('service.open method', function () {
 
-                it('should call $uibModal.open method', inject(function ($uibModal) {
+                it('should call $uibModal.open method with my options', inject(function ($uibModal) {
+
+                    var options = { someOption: 'option value' };
+
+                    spyOn($uibModal, 'open');
+
+                    $localeSelectorDialog.open(options);
+
+                    expect($uibModal.open).toHaveBeenCalled();
+                }));
+
+                it('should call $uibModal.open method with the default options', inject(function ($uibModal) {
 
                     spyOn($uibModal, 'open');
 
@@ -37,12 +48,40 @@
 
             describe('vm.options', function () {
 
+                it('should use default options when not passing options', function() {
+                    var vm = $controller('$localeSelectorDialogController', { options: null, $uibModalInstance: {} });
+
+                    expect(angular.isObject(vm.options)).toBe(true);
+                });
+
                 it('should know my options', function() {
                     var options = { someOption: 'option value' };
 
                     var vm = $controller('$localeSelectorDialogController', { options: options, $uibModalInstance: {} });
 
                     expect(vm.options.someOption).toEqual('option value');
+                });
+
+                it('should know my locales', function() {
+                    var options = { 
+                        'locales': {
+                            'en-US': {
+                                'name': 'English (US)',
+                                'language': 'en',
+                                'country': 'us'
+                            }
+                        }
+                    };
+
+                    var vm = $controller('$localeSelectorDialogController', { options: options, $uibModalInstance: {} });
+
+                    expect(vm.options.locales['en-US'].language).toEqual('en');
+                });
+
+                it('should use empty locales list when not passing locales', function() {
+                    var vm = $controller('$localeSelectorDialogController', { options: { locales: null }, $uibModalInstance: {} });
+
+                    expect(angular.isObject(vm.options.locales)).toBe(true);
                 });
             });
 
