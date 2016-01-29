@@ -50,7 +50,7 @@ This will install [AngularJS] and [AngularUI Bootstrap] bower packages.
 #### Manual download
 
 All the build files for all version can manually downloaded (or better yet, referencing them from the CDN):
-https://sharvit.github.io/angular-bootstrap-locale-dialog//angular-bootstrap-locale-dialog-v1.2.1.js
+https://sharvit.github.io/angular-bootstrap-locale-dialog//angular-bootstrap-locale-dialog-v1.2.2.js
 
 ### Adding dependency to your project
 
