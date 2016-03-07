@@ -31,7 +31,7 @@
     "unit-tests.karma.conf.js"
   ],
   "dependencies": {
-    "angular": ">=1.4.0",
-    "angular-bootstrap": "~1.1.0"
+    "angular": "^1.4.0",
+    "angular-bootstrap": "^1.1.0"
   }
 }
